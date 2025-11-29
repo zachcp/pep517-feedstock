@@ -29,6 +29,7 @@ requirements:
 
 tests:
   - python:
+      python_version: ${{ python_min }}.*
       imports:
         - pep517
       pip_check: true
