@@ -3,7 +3,6 @@ schema_version: 1
 context:
   name: pep517
   version: "0.13.0"
-  python_min: "3.8"
 
 package:
   name: ${{ name|lower }}
@@ -15,8 +14,8 @@ source:
 
 build:
   noarch: python
-  number: 1
-  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 2
+  script: python -m pip install . -vv
 
 requirements:
   host:
@@ -33,7 +32,6 @@ tests:
       imports:
         - pep517
       pip_check: true
-      python_version: ${{ python_min }}.*
 
 about:
   homepage: https://pypi.org/project/pep517/
